@@ -75,3 +75,67 @@ class NeuralNetwork:
         self.weights += change_w1
         self.weights += change_w2
 
+
+'''
+Base code from:
+    neuralnetwork.py code provided as a base for CS 412 at UIC
+class NeuralNetwork:
+
+    #Do not change this function header
+    def __init__(self,x=[[]],y=[],numLayers=2,numNodes=2,eta=0.001,maxIter=10000):
+        self.data = x
+        self.labels = y
+        self.nLayers = numLayers
+        self.nNodes = numNodes
+        self.eta = eta
+        self.maxIt = maxIter
+        #self.weights = [np.random.rand(len(x[0]),numNodes)] #create the weights from the inputs to the first layer
+        #for each of the layers
+            #self.weights.append(np.random.rand(numNodes,numNodes) #create the random weights between internal layers
+            #self.weights.append(np.random.rand(numNodes,1)) #create weights from final layer to output node
+            #self.outputs = np.zeros(y.shape)
+            #self.train()
+        self.a = 1 #this is how you define a non-static variable
+
+    def train(self):
+        #Do not change this function header
+        return 0.0
+
+    def predict(self,x=[]):
+        #Do not change this function header
+        return 0.0
+
+    def feedforward(self):
+        #This function is likely to be very helpful, but is not necessary
+        return 0.0
+
+    def backprop(self):
+        #This function is likely to be very helpful, but is not necessary
+        return 0.0
+'''
+
+'''
+Base code from: https://towardsdatascience.com
+    /how-to-build-your-own-neural-network
+    -from-scratch-in-python-68998a08e4f6
+class NeuralNetwork:
+    def __init__(self,x,y):
+        self.input = x
+        self.weights1 = np.random.rand(self.input.shape[1],4)
+        self.weights2 = np.random.rand(4,1)
+        self.y = y
+        self.output = np.zeros(y.shape)
+    
+    def feedforward(self):
+        self.layer1 = sigmoid(np.dot(self.input, self.weights1))
+        self.layer2 = sigmoid(np.dot(self.imput, self.weights2))
+
+    def backprop(self):
+        # application of the chain rule to find derivative of the loss function with respect to weights2 and weights1
+        d_weights2 = np.dot(self.layer1.T, (2*(self.y - self.output) * sigmoid_derivative(self.output)))
+        d_weights1 = np.dot(self.input.T,  (np.dot(2*(self.y - self.output) * sigmoid_derivative(self.output), self.weights2.T) * sigmoid_derivative(self.layer1)))
+
+        # update the weights with the derivative (slope) of the loss function
+        self.weights1 += d_weights1
+        self.weights2 += d_weights2
+'''
